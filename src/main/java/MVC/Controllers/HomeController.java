@@ -1,8 +1,6 @@
-package Controllers;
+package MVC.Controllers;
 
-import Entities.MovieEntity;
-import Entities.MovieEntity;
-import Services.MovieService;
+import BLL.Services.MovieService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -12,8 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-import repositories.MovieRepository;
+import DAL.repositories.MovieRepository;
 
 import java.util.HashMap;
 import java.util.Map;

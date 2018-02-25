@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="Entities.HallEntity" table="hall" schema="cinemadb">
+    <class name="DAL.Entities.HallEntity" table="hall" schema="cinemadb">
         <id name="idhall">
             <column name="idhall" sql-type="int(11)"/>
         </id>
@@ -18,13 +18,13 @@
             <key>
                 <column name="idHall" not-null="true"/>
             </key>
-            <one-to-many not-found="ignore" class="Entities.RawEntity"/>
+            <one-to-many not-found="ignore" class="DAL.Entities.RawEntity"/>
         </set>
         <set name="seancesByIdhall" inverse="true">
             <key>
                 <column name="idHall"/>
             </key>
-            <one-to-many not-found="ignore" class="Entities.SeanceEntity"/>
+            <one-to-many not-found="ignore" class="DAL.Entities.SeanceEntity"/>
         </set>
     </class>
 </hibernate-mapping>

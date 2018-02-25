@@ -1,13 +1,12 @@
-package ServiceImplementations;
+package BLL.ServiceImplementations;
 
-import Entities.MovieEntity;
-import Services.MovieService;
+import DAL.Entities.MovieEntity;
+import BLL.Services.MovieService;
 import com.google.inject.internal.util.Lists;
-import groovy.lang.Lazy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import repositories.MovieRepository;
+import DAL.repositories.MovieRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;

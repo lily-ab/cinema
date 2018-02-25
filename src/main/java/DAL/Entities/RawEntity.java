@@ -1,4 +1,4 @@
-package Entities;
+package DAL.Entities;
 
 import javax.persistence.*;
 import java.util.Collection;

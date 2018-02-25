@@ -1,6 +1,6 @@
-package Services;
+package BLL.Services;
 
-import Entities.MovieEntity;
+import DAL.Entities.MovieEntity;
 
 import java.util.List;
 
