@@ -16,7 +16,7 @@ public class Config extends WebMvcConfigurerAdapter {
     @Bean
     public UrlBasedViewResolver setupViewResolver() {
         UrlBasedViewResolver resolver = new UrlBasedViewResolver();
-        resolver.setPrefix("/WEB-INF/jsp/");
+        resolver.setPrefix("/MVCL/");
         resolver.setSuffix(".jsp");
         resolver.setViewClass(InternalResourceView.class);
         return resolver;
@@ -24,6 +24,6 @@ public class Config extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/*");
+        registry.addResourceHandler("/MVCL/**").addResourceLocations("/MVCL/*");
     }
 }
