@@ -1,7 +1,7 @@
 package repositories;
 
-import entities.Seat;
+import Entities.SeatEntity;
 import org.springframework.data.repository.CrudRepository;
 
-public interface SeatRepository extends CrudRepository<Seat,Integer> {
+public interface SeatRepository extends CrudRepository<SeatEntity,Integer> {
 }

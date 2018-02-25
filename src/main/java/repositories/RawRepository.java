@@ -1,7 +1,7 @@
 package repositories;
 
-import entities.Raw;
+import Entities.RawEntity;
 import org.springframework.data.repository.CrudRepository;
 
-public interface RawRepository extends CrudRepository<Raw,Integer> {
+public interface RawRepository extends CrudRepository<RawEntity,Integer> {
 }

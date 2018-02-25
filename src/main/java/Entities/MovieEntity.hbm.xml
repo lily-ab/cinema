@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Entities.MovieEntity" table="movie" schema="cinemadb">
+        <id name="idMovie">
+            <column name="idMovie" sql-type="int(11)"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="genre">
+            <column name="genre" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="dateOfStart">
+            <column name="dateOfStart" sql-type="date"/>
+        </property>
+        <property name="dateOfFinish">
+            <column name="dateOfFinish" sql-type="date"/>
+        </property>
+        <property name="duration">
+            <column name="duration" sql-type="int(11)"/>
+        </property>
+        <property name="picture">
+            <column name="picture" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="description">
+            <column name="description" sql-type="longtext" not-null="true"/>
+        </property>
+        <property name="isActive">
+            <column name="isActive" sql-type="tinyint(4)" not-null="true"/>
+        </property>
+        <set name="seancesByIdMovie" inverse="true">
+            <key>
+                <column name="idMovie"/>
+            </key>
+            <one-to-many not-found="ignore" class="Entities.SeanceEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Entities.ReservationEntity" table="reservation" schema="cinemadb">
+        <id name="idreservation">
+            <column name="idreservation" sql-type="int(11)"/>
+        </id>
+        <many-to-one name="seanceByIdSeance" class="Entities.SeanceEntity">
+            <column name="idSeance"/>
+        </many-to-one>
+        <many-to-one name="seatByIdSeat" class="Entities.SeatEntity">
+            <column name="idSeat"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

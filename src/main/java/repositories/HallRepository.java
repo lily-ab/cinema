@@ -1,7 +1,7 @@
 package repositories;
 
-import entities.Hall;
+import Entities.HallEntity;
 import org.springframework.data.repository.CrudRepository;
 
-public interface HallRepository extends CrudRepository<Hall,Integer> {
+public interface HallRepository extends CrudRepository<HallEntity,Integer> {
 }

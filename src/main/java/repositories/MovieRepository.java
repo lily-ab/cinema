@@ -1,10 +1,14 @@
 package repositories;
 
-import entities.Movie;
+import Entities.MovieEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 
-public interface MovieRepository  extends CrudRepository<Movie,Integer>{
+@Repository
+public interface MovieRepository  extends CrudRepository<MovieEntity,Integer>{
 
+
+    
 }
