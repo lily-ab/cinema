@@ -12,7 +12,7 @@
 
 
 
-<a href="${pageContext.request.contextPath}/personList">Movie List</a>
+<a href="${pageContext.request.contextPath}/movieList">Movie List</a>
 
 </body>
 
