@@ -1,4 +1,4 @@
-package DAL.Entities;
+package com.lab4nc.cinema.DAL.Entities;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "movie", schema = "cinemadb", catalog = "")
+@Table(name = "movie", schema = "cinemadb")
 public class MovieEntity {
     private int idMovie;
     private String name;

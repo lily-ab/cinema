@@ -1,4 +1,4 @@
-package DAL.Entities;
+package com.lab4nc.cinema.DAL.Entities;
 
 import javax.persistence.*;
 import java.util.Collection;

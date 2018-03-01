@@ -4,21 +4,21 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="DAL.Entities.RawEntity" table="raw" schema="cinemadb">
+    <class name="com.lab4nc.cinema.DAL.Entities.RawEntity" table="raw" schema="cinemadb">
         <id name="idraw">
             <column name="idraw" sql-type="int(11)"/>
         </id>
         <property name="number">
             <column name="number" sql-type="int(11)" not-null="true"/>
         </property>
-        <many-to-one name="hallByIdHall" class="DAL.Entities.HallEntity">
+        <many-to-one name="hallByIdHall" class="com.lab4nc.cinema.DAL.Entities.HallEntity">
             <column name="idHall" not-null="true"/>
         </many-to-one>
         <set name="seatsByIdraw" inverse="true">
             <key>
                 <column name="idRaw"/>
             </key>
-            <one-to-many not-found="ignore" class="DAL.Entities.SeatEntity"/>
+            <one-to-many not-found="ignore" class="com.lab4nc.cinema.DAL.Entities.SeatEntity"/>
         </set>
     </class>
 </hibernate-mapping>

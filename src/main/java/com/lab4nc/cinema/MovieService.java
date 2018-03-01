@@ -1,6 +1,6 @@
-package BLL.Services;
+package com.lab4nc.cinema;
 
-import DAL.Entities.MovieEntity;
+import com.lab4nc.cinema.DAL.Entities.MovieEntity;
 
 import java.util.List;
 

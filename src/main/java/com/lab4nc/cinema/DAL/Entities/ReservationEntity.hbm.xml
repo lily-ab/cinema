@@ -4,14 +4,14 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="DAL.Entities.ReservationEntity" table="reservation" schema="cinemadb">
+    <class name="com.lab4nc.cinema.DAL.Entities.ReservationEntity" table="reservation" schema="cinemadb">
         <id name="idreservation">
             <column name="idreservation" sql-type="int(11)"/>
         </id>
-        <many-to-one name="seanceByIdSeance" class="DAL.Entities.SeanceEntity">
+        <many-to-one name="seanceByIdSeance" class="com.lab4nc.cinema.DAL.Entities.SeanceEntity">
             <column name="idSeance"/>
         </many-to-one>
-        <many-to-one name="seatByIdSeat" class="DAL.Entities.SeatEntity">
+        <many-to-one name="seatByIdSeat" class="com.lab4nc.cinema.DAL.Entities.SeatEntity">
             <column name="idSeat"/>
         </many-to-one>
     </class>

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" />
     <title>Welcome</title>
@@ -8,11 +8,9 @@
 </head>
 <body>
 <h1>Welcome</h1>
-<h2>${message}</h2>
 
 
 
-<a href="${pageContext.request.contextPath}/movieList">Movie List</a>
 
 </body>
 

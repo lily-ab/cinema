@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="DAL.Entities.SeanceEntity" table="seance" schema="cinemadb">
+    <class name="com.lab4nc.cinema.DAL.Entities.SeanceEntity" table="seance" schema="cinemadb">
         <id name="idseance">
             <column name="idseance" sql-type="int(11)"/>
         </id>
@@ -14,17 +14,17 @@
         <property name="time">
             <column name="time" sql-type="time"/>
         </property>
-        <many-to-one name="hallByIdHall" class="DAL.Entities.HallEntity">
+        <many-to-one name="hallByIdHall" class="com.lab4nc.cinema.DAL.Entities.HallEntity">
             <column name="idHall"/>
         </many-to-one>
-        <many-to-one name="movieByIdMovie" class="DAL.Entities.MovieEntity">
+        <many-to-one name="movieByIdMovie" class="com.lab4nc.cinema.DAL.Entities.MovieEntity">
             <column name="idMovie"/>
         </many-to-one>
         <set name="reservationsByIdseance" inverse="true">
             <key>
                 <column name="idSeance"/>
             </key>
-            <one-to-many not-found="ignore" class="DAL.Entities.ReservationEntity"/>
+            <one-to-many not-found="ignore" class="com.lab4nc.cinema.DAL.Entities.ReservationEntity"/>
         </set>
     </class>
 </hibernate-mapping>

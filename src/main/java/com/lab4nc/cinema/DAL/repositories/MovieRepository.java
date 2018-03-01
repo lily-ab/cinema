@@ -1,6 +1,6 @@
-package DAL.repositories;
+package com.lab4nc.cinema.DAL.repositories;
 
-import DAL.Entities.MovieEntity;
+import com.lab4nc.cinema.DAL.Entities.MovieEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

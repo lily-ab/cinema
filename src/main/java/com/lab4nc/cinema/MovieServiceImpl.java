@@ -1,18 +1,19 @@
-package BLL.ServiceImplementations;
+package com.lab4nc.cinema;
 
-import DAL.Entities.MovieEntity;
-import BLL.Services.MovieService;
 import com.google.inject.internal.util.Lists;
+import com.lab4nc.cinema.DAL.Entities.MovieEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import DAL.repositories.MovieRepository;
+import com.lab4nc.cinema.DAL.repositories.MovieRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
-@Service("MovieService")
+//@Service("MovieService")
 @Repository
 @Transactional
+@Component
 public class MovieServiceImpl implements MovieService {
     @Autowired
     MovieRepository movieRep;
