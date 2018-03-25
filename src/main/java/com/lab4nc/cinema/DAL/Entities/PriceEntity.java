@@ -26,7 +26,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "id_Seance", nullable = false)
+    @Column(name = "id_Seance", nullable = false, insertable = false, updatable = false)
     public int getIdSeance() {
         return idSeance;
     }
@@ -36,7 +36,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "id_Raw", nullable = false)
+    @Column(name = "id_Raw", nullable = false, insertable = false, updatable = false)
     public int getIdRaw() {
         return idRaw;
     }

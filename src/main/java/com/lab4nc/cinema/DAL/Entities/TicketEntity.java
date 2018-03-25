@@ -31,7 +31,7 @@ public class TicketEntity {
     }
 
     @Basic
-    @Column(name = "id_Seance", nullable = false)
+    @Column(name = "id_Seance", nullable = false, insertable = false, updatable = false)
     public int getIdSeance() {
         return idSeance;
     }
@@ -41,7 +41,7 @@ public class TicketEntity {
     }
 
     @Basic
-    @Column(name = "id_Hall", nullable = false)
+    @Column(name = "id_Hall", nullable = false, insertable = false, updatable = false)
     public int getIdHall() {
         return idHall;
     }
@@ -51,7 +51,7 @@ public class TicketEntity {
     }
 
     @Basic
-    @Column(name = "id_Raw", nullable = false)
+    @Column(name = "id_Raw", nullable = false, insertable = false, updatable = false)
     public int getIdRaw() {
         return idRaw;
     }
@@ -61,7 +61,7 @@ public class TicketEntity {
     }
 
     @Basic
-    @Column(name = "id_Seat", nullable = false)
+    @Column(name = "id_Seat", nullable = false, insertable = false, updatable = false)
     public int getIdSeat() {
         return idSeat;
     }
@@ -71,7 +71,7 @@ public class TicketEntity {
     }
 
     @Basic
-    @Column(name = "id_Price", nullable = true)
+    @Column(name = "id_Price", nullable = true, insertable = false, updatable = false)
     public Integer getIdPrice() {
         return idPrice;
     }
@@ -81,7 +81,7 @@ public class TicketEntity {
     }
 
     @Basic
-    @Column(name = "id_Reservation", nullable = false)
+    @Column(name = "id_Reservation", nullable = false, insertable = false, updatable = false)
     public int getIdReservation() {
         return idReservation;
     }

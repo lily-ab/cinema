@@ -5,6 +5,7 @@ import com.lab4nc.cinema.BLL.Services.MovieService;
 import com.lab4nc.cinema.DAL.Entities.MovieEntity;
 import com.lab4nc.cinema.DAL.Entities.SeanceEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import com.lab4nc.cinema.DAL.repositories.MovieRepository;
@@ -15,6 +16,7 @@ import java.util.List;
 @Repository
 @Transactional
 @Component
+@EnableAutoConfiguration
 public class MovieServiceImpl implements MovieService {
     @Autowired
     MovieRepository movieRep;

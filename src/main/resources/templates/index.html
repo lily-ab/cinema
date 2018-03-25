@@ -9,7 +9,7 @@
             <h1>Welcome</h1>
         </div>
         <div id="movieBlock" th:each="movie:${movies}">
-            <h3><a th:href="@{/movie/{id}/(id=${movie.id_Movie})}" th:text="${movie.getName()}"/></h3>
+            <h3><a th:href="@{/movie/{id}/(id=${movie.getIdMovie()})}" th:text="${movie.getName()}"/></h3>
             <p th:text="${movie.getGenre()}"></p>
             <div id="pictureMini">
                 <img th:src="@{'/pictures/' + ${movie.getPicture()}}" width="150px" height="250px"/>

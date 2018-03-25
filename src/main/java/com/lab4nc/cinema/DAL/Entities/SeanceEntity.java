@@ -30,7 +30,7 @@ public class SeanceEntity {
     }
 
     @Basic
-    @Column(name = "id_Hall", nullable = false)
+    @Column(name = "id_Hall", nullable = false, insertable = false, updatable = false)
     public int getIdHall() {
         return idHall;
     }
@@ -40,7 +40,7 @@ public class SeanceEntity {
     }
 
     @Basic
-    @Column(name = "id_Movie", nullable = false)
+    @Column(name = "id_Movie", nullable = false, insertable = false, updatable = false)
     public int getIdMovie() {
         return idMovie;
     }

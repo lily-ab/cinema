@@ -26,7 +26,7 @@ public class SeatEntity {
     }
 
     @Basic
-    @Column(name = "id_Raw", nullable = false)
+    @Column(name = "id_Raw", nullable = false, insertable = false, updatable = false)
     public int getIdRaw() {
         return idRaw;
     }
@@ -46,7 +46,7 @@ public class SeatEntity {
     }
 
     @Basic
-    @Column(name = "id_Hall", nullable = false)
+    @Column(name = "id_Hall", nullable = false, insertable = false, updatable = false)
     public int getIdHall() {
         return idHall;
     }

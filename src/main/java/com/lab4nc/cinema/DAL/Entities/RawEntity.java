@@ -36,7 +36,7 @@ public class RawEntity {
     }
 
     @Basic
-    @Column(name = "id_Hall", nullable = false)
+    @Column(name = "id_Hall", nullable = false, insertable = false, updatable = false)
     public int getIdHall() {
         return idHall;
     }
