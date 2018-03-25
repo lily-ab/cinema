@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "movie", schema = "cinemadb")
+@Table(name = "movie", schema = "dbcinema", catalog = "")
 public class MovieEntity {
     private int idMovie;
     private String name;
@@ -20,7 +20,7 @@ public class MovieEntity {
     private Collection<SeanceEntity> seancesByIdMovie;
 
     @Id
-    @Column(name = "idMovie", nullable = false)
+    @Column(name = "id_Movie", nullable = false)
     public int getIdMovie() {
         return idMovie;
     }
@@ -50,7 +50,7 @@ public class MovieEntity {
     }
 
     @Basic
-    @Column(name = "dateOfStart", nullable = false)
+    @Column(name = "date_Of_Start", nullable = false)
     public Date getDateOfStart() {
         return dateOfStart;
     }
@@ -60,7 +60,7 @@ public class MovieEntity {
     }
 
     @Basic
-    @Column(name = "dateOfFinish", nullable = false)
+    @Column(name = "date_Of_Finish", nullable = false)
     public Date getDateOfFinish() {
         return dateOfFinish;
     }
@@ -100,7 +100,7 @@ public class MovieEntity {
     }
 
     @Basic
-    @Column(name = "isActive", nullable = true)
+    @Column(name = "is_Active", nullable = true)
     public Byte getIsActive() {
         return isActive;
     }

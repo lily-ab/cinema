@@ -5,23 +5,34 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "seat", schema = "cinemadb", catalog = "")
+@Table(name = "seat", schema = "dbcinema", catalog = "")
 public class SeatEntity {
-    private int idseat;
+    private int idSeat;
+    private int idRaw;
     private int number;
-    private int price;
-    private byte isTaken;
-    private Collection<ReservationEntity> reservationsByIdseat;
+    private int idHall;
     private RawEntity rawByIdRaw;
+    private HallEntity hallByIdHall;
+    private Collection<TicketEntity> ticketsByIdSeat;
 
     @Id
-    @Column(name = "idseat", nullable = false)
-    public int getIdseat() {
-        return idseat;
+    @Column(name = "id_Seat", nullable = false)
+    public int getIdSeat() {
+        return idSeat;
     }
 
-    public void setIdseat(int idseat) {
-        this.idseat = idseat;
+    public void setIdSeat(int idSeat) {
+        this.idSeat = idSeat;
+    }
+
+    @Basic
+    @Column(name = "id_Raw", nullable = false)
+    public int getIdRaw() {
+        return idRaw;
+    }
+
+    public void setIdRaw(int idRaw) {
+        this.idRaw = idRaw;
     }
 
     @Basic
@@ -35,23 +46,13 @@ public class SeatEntity {
     }
 
     @Basic
-    @Column(name = "price", nullable = false)
-    public int getPrice() {
-        return price;
+    @Column(name = "id_Hall", nullable = false)
+    public int getIdHall() {
+        return idHall;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    @Basic
-    @Column(name = "isTaken", nullable = false)
-    public byte getIsTaken() {
-        return isTaken;
-    }
-
-    public void setIsTaken(byte isTaken) {
-        this.isTaken = isTaken;
+    public void setIdHall(int idHall) {
+        this.idHall = idHall;
     }
 
     @Override
@@ -59,34 +60,44 @@ public class SeatEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SeatEntity that = (SeatEntity) o;
-        return idseat == that.idseat &&
+        return idSeat == that.idSeat &&
+                idRaw == that.idRaw &&
                 number == that.number &&
-                price == that.price &&
-                isTaken == that.isTaken;
+                idHall == that.idHall;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(idseat, number, price, isTaken);
-    }
-
-    @OneToMany(mappedBy = "seatByIdSeat")
-    public Collection<ReservationEntity> getReservationsByIdseat() {
-        return reservationsByIdseat;
-    }
-
-    public void setReservationsByIdseat(Collection<ReservationEntity> reservationsByIdseat) {
-        this.reservationsByIdseat = reservationsByIdseat;
+        return Objects.hash(idSeat, idRaw, number, idHall);
     }
 
     @ManyToOne
-    @JoinColumn(name = "idRaw", referencedColumnName = "idraw", nullable = false)
+    @JoinColumn(name = "id_Raw", referencedColumnName = "id_Raw", nullable = false)
     public RawEntity getRawByIdRaw() {
         return rawByIdRaw;
     }
 
     public void setRawByIdRaw(RawEntity rawByIdRaw) {
         this.rawByIdRaw = rawByIdRaw;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "id_Hall", referencedColumnName = "id_hall", nullable = false)
+    public HallEntity getHallByIdHall() {
+        return hallByIdHall;
+    }
+
+    public void setHallByIdHall(HallEntity hallByIdHall) {
+        this.hallByIdHall = hallByIdHall;
+    }
+
+    @OneToMany(mappedBy = "seatByIdSeat")
+    public Collection<TicketEntity> getTicketsByIdSeat() {
+        return ticketsByIdSeat;
+    }
+
+    public void setTicketsByIdSeat(Collection<TicketEntity> ticketsByIdSeat) {
+        this.ticketsByIdSeat = ticketsByIdSeat;
     }
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:spring="http://java.sun.com/xml/ns/javaee"
+      th:fragment="page">
+<head>
+    <link href="/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+    <link href="/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+    <link href="/css/movieStyle.css" th:href="@{/css/movieStyle.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+<div id="layout">
+    <a href="">showtimes</a>
+    <a href="">halls</a>
+</div>
+<div id="content">
+    <div th:include="this :: content"/>
+</div>
+<div id="footer">
+layout footer
+</div>
+</body>
+</html>

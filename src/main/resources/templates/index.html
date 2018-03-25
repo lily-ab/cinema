@@ -1,31 +1,23 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8" />
-    <title>Welcome</title>
-    <link rel="stylesheet" type="text/css"
-          href="${pageContext.request.contextPath}/css/style.css"/>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:fragment="page" th:include="layout :: page">
+
 <body>
-<h1>Welcome</h1>
+<div th:fragment="content">
+    <div id="movieContent">
+        <div id="menu">
+            <h1>Welcome</h1>
+        </div>
+        <div id="movieBlock" th:each="movie:${movies}">
+            <h3><a th:href="@{/movie/{id}/(id=${movie.id_Movie})}" th:text="${movie.getName()}"/></h3>
+            <p th:text="${movie.getGenre()}"></p>
+            <div id="pictureMini">
+                <img th:src="@{'/pictures/' + ${movie.getPicture()}}" width="150px" height="250px"/>
+            </div>
+        </div>
+    </div>
 
-
-
-<a href="${pageContext.request.contextPath}/movieList">Movie List</a>
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Genre</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="movie:${movies}">
-        <td th:text="${movies.name}"></td>
-        <td th:text="${movie.genre}"></td>
-    </tr>
-    </tbody>
-</table>
+</div>
 </body>
 
 </html>

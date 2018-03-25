@@ -5,22 +5,24 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "hall", schema = "cinemadb", catalog = "")
+@Table(name = "hall", schema = "dbcinema", catalog = "")
 public class HallEntity {
-    private int idhall;
+    private int idHall;
     private String name;
     private String description;
-    private Collection<RawEntity> rawsByIdhall;
-    private Collection<SeanceEntity> seancesByIdhall;
+    private Collection<RawEntity> rawsByIdHall;
+    private Collection<SeanceEntity> seancesByIdHall;
+    private Collection<SeatEntity> seatsByIdHall;
+    private Collection<TicketEntity> ticketsByIdHall;
 
     @Id
-    @Column(name = "idhall", nullable = false)
-    public int getIdhall() {
-        return idhall;
+    @Column(name = "id_hall", nullable = false)
+    public int getIdHall() {
+        return idHall;
     }
 
-    public void setIdhall(int idhall) {
-        this.idhall = idhall;
+    public void setIdHall(int idHall) {
+        this.idHall = idHall;
     }
 
     @Basic
@@ -48,7 +50,7 @@ public class HallEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         HallEntity that = (HallEntity) o;
-        return idhall == that.idhall &&
+        return idHall == that.idHall &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(description, that.description);
     }
@@ -56,24 +58,42 @@ public class HallEntity {
     @Override
     public int hashCode() {
 
-        return Objects.hash(idhall, name, description);
+        return Objects.hash(idHall, name, description);
     }
 
     @OneToMany(mappedBy = "hallByIdHall")
-    public Collection<RawEntity> getRawsByIdhall() {
-        return rawsByIdhall;
+    public Collection<RawEntity> getRawsByIdHall() {
+        return rawsByIdHall;
     }
 
-    public void setRawsByIdhall(Collection<RawEntity> rawsByIdhall) {
-        this.rawsByIdhall = rawsByIdhall;
+    public void setRawsByIdHall(Collection<RawEntity> rawsByIdHall) {
+        this.rawsByIdHall = rawsByIdHall;
     }
 
     @OneToMany(mappedBy = "hallByIdHall")
-    public Collection<SeanceEntity> getSeancesByIdhall() {
-        return seancesByIdhall;
+    public Collection<SeanceEntity> getSeancesByIdHall() {
+        return seancesByIdHall;
     }
 
-    public void setSeancesByIdhall(Collection<SeanceEntity> seancesByIdhall) {
-        this.seancesByIdhall = seancesByIdhall;
+    public void setSeancesByIdHall(Collection<SeanceEntity> seancesByIdHall) {
+        this.seancesByIdHall = seancesByIdHall;
+    }
+
+    @OneToMany(mappedBy = "hallByIdHall")
+    public Collection<SeatEntity> getSeatsByIdHall() {
+        return seatsByIdHall;
+    }
+
+    public void setSeatsByIdHall(Collection<SeatEntity> seatsByIdHall) {
+        this.seatsByIdHall = seatsByIdHall;
+    }
+
+    @OneToMany(mappedBy = "hallByIdHall")
+    public Collection<TicketEntity> getTicketsByIdHall() {
+        return ticketsByIdHall;
+    }
+
+    public void setTicketsByIdHall(Collection<TicketEntity> ticketsByIdHall) {
+        this.ticketsByIdHall = ticketsByIdHall;
     }
 }

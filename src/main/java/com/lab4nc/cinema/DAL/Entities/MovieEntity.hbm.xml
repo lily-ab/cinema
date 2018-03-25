@@ -4,9 +4,9 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.lab4nc.cinema.DAL.Entities.MovieEntity" table="movie" schema="cinemadb">
+    <class name="com.lab4nc.cinema.DAL.Entities.MovieEntity" table="movie" schema="dbcinema">
         <id name="idMovie">
-            <column name="idMovie" sql-type="int(11)"/>
+            <column name="id_Movie" sql-type="int(11)"/>
         </id>
         <property name="name">
             <column name="name" sql-type="varchar(45)" length="45"/>
@@ -15,10 +15,10 @@
             <column name="genre" sql-type="varchar(45)" length="45" not-null="true"/>
         </property>
         <property name="dateOfStart">
-            <column name="dateOfStart" sql-type="date"/>
+            <column name="date_Of_Start" sql-type="date"/>
         </property>
         <property name="dateOfFinish">
-            <column name="dateOfFinish" sql-type="date"/>
+            <column name="date_Of_Finish" sql-type="date"/>
         </property>
         <property name="duration">
             <column name="duration" sql-type="int(11)"/>
@@ -30,11 +30,11 @@
             <column name="description" sql-type="longtext" not-null="true"/>
         </property>
         <property name="isActive">
-            <column name="isActive" sql-type="tinyint(4)" not-null="true"/>
+            <column name="is_Active" sql-type="tinyint(4)" not-null="true"/>
         </property>
         <set name="seancesByIdMovie" inverse="true">
             <key>
-                <column name="idMovie"/>
+                <column name="id_Movie"/>
             </key>
             <one-to-many not-found="ignore" class="com.lab4nc.cinema.DAL.Entities.SeanceEntity"/>
         </set>

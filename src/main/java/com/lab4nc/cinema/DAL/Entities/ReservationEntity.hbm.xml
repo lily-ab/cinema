@@ -4,15 +4,27 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.lab4nc.cinema.DAL.Entities.ReservationEntity" table="reservation" schema="cinemadb">
-        <id name="idreservation">
-            <column name="idreservation" sql-type="int(11)"/>
+    <class name="com.lab4nc.cinema.DAL.Entities.ReservationEntity" table="reservation" schema="dbcinema">
+        <id name="idReservation">
+            <column name="id_Reservation" sql-type="int(11)"/>
         </id>
-        <many-to-one name="seanceByIdSeance" class="com.lab4nc.cinema.DAL.Entities.SeanceEntity">
-            <column name="idSeance"/>
-        </many-to-one>
-        <many-to-one name="seatByIdSeat" class="com.lab4nc.cinema.DAL.Entities.SeatEntity">
-            <column name="idSeat"/>
-        </many-to-one>
+        <property name="sum">
+            <column name="sum" sql-type="int(11)"/>
+        </property>
+        <property name="date">
+            <column name="date" sql-type="datetime"/>
+        </property>
+        <property name="cancelled">
+            <column name="cancelled" sql-type="tinyint(1)" not-null="true"/>
+        </property>
+        <property name="phone">
+            <column name="phone" sql-type="varchar(11)" length="11"/>
+        </property>
+        <set name="ticketsByIdReservation" inverse="true">
+            <key>
+                <column name="id_Reservation"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.lab4nc.cinema.DAL.Entities.TicketEntity"/>
+        </set>
     </class>
 </hibernate-mapping>
